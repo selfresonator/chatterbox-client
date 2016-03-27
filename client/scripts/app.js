@@ -57,7 +57,7 @@ var app = {
             delete badScript;
           } else {
             console.log(message.text)
-            $('#chats').append('<div class="messageBox">'+message.text+'</div>');
+            $('#chats').append('<div class="usernameBox">Username:'+message.username+'  <i>'+message.text+'<i>   Room:'+message.room+'<i></div>');
           }
         }
       },
