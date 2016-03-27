@@ -1,7 +1,13 @@
 // YOUR CODE HERE:
+<<<<<<< HEAD
 $(document).ready(function() {
   app.init();
   $('#fetch').on('click', function() {
+=======
+$(document).ready(function() { 
+  $('#fetch').on('click', function(e) {
+    e.preventDefault();
+>>>>>>> 92a7345c686b8f56f19499ce59cb16bb21118a48
     app.fetch();
     // console.log(message);
   });
@@ -40,10 +46,30 @@ var app = {
       // console.log(contentType)
       success: function (data) {
         var results = data.results;
+<<<<<<< HEAD
         data: data,
         console.log('chatterbox: Message recieved');
         for (var i = 0; i < results.length; i++) {
           $('#chats').append('<div>'+results[i].username+'</div>');
+=======
+        data: data;
+        for (var i = 0; i < results.length; i++) {
+          var message = {
+            username: results[i].username,
+            text: results[i].text,
+            roomname: results[i].roomname
+          }
+          //create condition to see if message.text is a script
+            //if it is not a script, run the the code
+          var badScript = document.getElementsByTagName('script');
+          // console.log('this is the baddie!:',badScript);
+
+          if (message.text !== badScript) {
+            console.log('found it!')
+            $('#chats').append('<div>'+message.text+'</div>');
+          }
+              console.log(message.text)
+>>>>>>> 92a7345c686b8f56f19499ce59cb16bb21118a48
         }
       },
       error: function (data) {
