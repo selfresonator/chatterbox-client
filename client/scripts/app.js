@@ -42,13 +42,8 @@ var app = {
         var results = data.results;
         data: data,
         console.log('chatterbox: Message recieved');
-        for (var i = 0; i < results; i++) {
-          // var message = {
-          //   username: results[i].username,
-          //   text: results[i].text,
-          //   roomname: results[i].roomname
-          // };
-          $('#chats').append('<div>'+data.results[i].username+'<div>');
+        for (var i = 0; i < results.length; i++) {
+          $('#chats').append('<div>'+results[i].username+'</div>');
         }
       },
       error: function (data) {
