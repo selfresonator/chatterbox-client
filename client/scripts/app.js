@@ -51,13 +51,13 @@ var app = {
           //create condition to see if message.text is a script
             //if it is not a script, run the the code
           var badScript = document.getElementsByTagName('script');
-          // console.log(.getElementsByTagName('script'));
+          // console.log('this is the baddie!:',badScript);
 
-          if (message.text === badScript) {
+          if (message.text !== badScript) {
             console.log('found it!')
+            $('#chats').append('<div>'+message.text+'</div>');
           }
               console.log(message.text)
-          $('#chats').append('<div>'+message.username+'</div>');
         }
       },
       error: function (data) {
